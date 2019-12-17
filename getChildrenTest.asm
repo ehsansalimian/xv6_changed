@@ -1,5 +1,5 @@
 
-_myprogram:     file format elf32-i386
+_getChildrenTest:     file format elf32-i386
 
 
 Disassembly of section .text:

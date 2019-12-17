@@ -10,7 +10,7 @@
 00000000 .debug_str
 00000000 .debug_loc
 00000000 .debug_ranges
-00000000 myprogram.c
+00000000 getChildrenTest.c
 00000000 ulib.c
 00000000 printf.c
 000003d0 printint
