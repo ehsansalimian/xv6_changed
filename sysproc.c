@@ -101,3 +101,7 @@ sys_getChildren(int procId)
 {
   return getChildren(procId);
 }
+int
+sys_getCount(int sysNum){
+  return getCount(sysNum);
+}

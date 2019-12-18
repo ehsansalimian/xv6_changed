@@ -12,11 +12,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 usertests.c
-00006200 args.1398
+00006200 args.1400
 00000000 ulib.c
 00000000 printf.c
 00003d60 printint
-00005907 digits.1034
+00005907 digits.1036
 00000000 umalloc.c
 00006280 freep
 00006284 base
@@ -79,6 +79,7 @@
 000030b0 sbrktest
 00000410 opentest
 00001f00 subdir
+00003d52 getCount
 00003960 uio
 00001720 linktest
 000089c0 buf

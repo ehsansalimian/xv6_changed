@@ -549,3 +549,12 @@ acquire(&ptable.lock);
 
   return childrens;
 }
+
+int 
+getCount(int sysNum){
+  argint(0,&sysNum);
+ 
+  return myproc()->arraySys[sysNum];
+
+}
+
