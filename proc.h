@@ -7,7 +7,8 @@ struct cpu {
   volatile uint started;       // Has the CPU started?
   int ncli;                    // Depth of pushcli nesting.
   int intena;                  // Were interrupts enabled before pushcli?
-  struct proc *proc;           // The process running on this cpu or null
+  struct proc *proc;  
+           // The process running on this cpu or null
 };
 
 extern struct cpu cpus[NCPU];
@@ -49,7 +50,9 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
-  int arraySys[23];
+  int arraySys[100];
+  int priority;
+  int calculatedPriority;
 };
 
 // Process memory is laid out contiguously, low addresses first:

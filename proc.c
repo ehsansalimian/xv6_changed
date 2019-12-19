@@ -74,6 +74,8 @@ static struct proc*
 allocproc(void)
 {
   struct proc *p;
+//  struct proc *p1;
+ // int selectedProcId=0;
   char *sp;
 
   acquire(&ptable.lock);
@@ -88,6 +90,28 @@ allocproc(void)
 found:
   p->state = EMBRYO;
   p->pid = nextpid++;
+  p->priority=5;
+
+//  int i=0; 
+// for(p1 = ptable.proc; p1 < &ptable.proc[NPROC]; p1++){
+//   if (i==0)
+//   {
+//     selectedProcId=p1->pid;
+//     i++;
+//   }
+//   if (p1->calculatedPriority<selectedProcId)
+//   {
+//    selectedProcId=p1->calculatedPriority;
+//    i++
+//   }
+
+// }
+// for(p1 = ptable.proc; p1 < &ptable.proc[NPROC]; p1++){
+//   if (p1->pid==selectedProcId){
+//     p=p1;
+//   }
+// }
+
 
   release(&ptable.lock);
 
@@ -323,28 +347,48 @@ void
 scheduler(void)
 {
   struct proc *p;
+    struct proc *p1;
+  
   struct cpu *c = mycpu();
   c->proc = 0;
   
   for(;;){
     // Enable interrupts on this processor.
     sti();
-
+ struct proc *highP;
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+    
+    
+
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+      
       if(p->state != RUNNABLE)
         continue;
+
+
+      highP=p;
+
+    for(p1 = ptable.proc; p1 < &ptable.proc[NPROC]; p1++){
+      if(p->state != RUNNABLE)
+        continue;
+      if (highP->calculatedPriority > p1->calculatedPriority)
+      {
+        highP=p1;
+      }
+
+    }  
 
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
-      c->proc = p;
-      switchuvm(p);
-      p->state = RUNNING;
+      c->proc = highP;
+      switchuvm(highP);
+      highP->state = RUNNING;
 
-      swtch(&(c->scheduler), p->context);
+      swtch(&(c->scheduler), highP->context);
       switchkvm();
+   //   highP->calculatedPriority+=highP->priority;
 
       // Process is done running for now.
       // It should have changed its p->state before coming back.
@@ -557,4 +601,6 @@ getCount(int sysNum){
   return myproc()->arraySys[sysNum];
 
 }
+
+
 
