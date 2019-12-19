@@ -103,5 +103,15 @@ sys_getChildren(int procId)
 }
 int
 sys_getCount(int sysNum){
+    argint(0,&sysNum);
+
   return getCount(sysNum);
+}
+int
+sys_getPolicy(void){
+  return getPolicy();
+}
+void sys_setPolicy(int policyNum){
+  argint(0,&policyNum);
+  setPolicy(policyNum);
 }

@@ -71,7 +71,7 @@ forktest(void)
   int n, pid;
 
   printf(1, "fork test\n");
-  49:	c7 44 24 04 fc 03 00 	movl   $0x3fc,0x4(%esp)
+  49:	c7 44 24 04 0c 04 00 	movl   $0x40c,0x4(%esp)
   50:	00 
   51:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   58:	e8 b3 ff ff ff       	call   10 <printf>
@@ -137,7 +137,7 @@ forktest(void)
   }
 
   printf(1, "fork test OK\n");
-  a2:	c7 44 24 04 2e 04 00 	movl   $0x42e,0x4(%esp)
+  a2:	c7 44 24 04 3e 04 00 	movl   $0x43e,0x4(%esp)
   a9:	00 
   aa:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   b1:	e8 5a ff ff ff       	call   10 <printf>
@@ -153,9 +153,9 @@ void
 printf(int fd, const char *s, ...)
 {
   write(fd, s, strlen(s));
-  c0:	c7 04 24 3c 04 00 00 	movl   $0x43c,(%esp)
+  c0:	c7 04 24 4c 04 00 00 	movl   $0x44c,(%esp)
   c7:	e8 d4 00 00 00       	call   1a0 <strlen>
-  cc:	c7 44 24 04 3c 04 00 	movl   $0x43c,0x4(%esp)
+  cc:	c7 44 24 04 4c 04 00 	movl   $0x44c,0x4(%esp)
   d3:	00 
   d4:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   db:	89 44 24 08          	mov    %eax,0x8(%esp)
@@ -172,7 +172,7 @@ printf(int fd, const char *s, ...)
   for(; n > 0; n--){
     if(wait() < 0){
       printf(1, "wait stopped early\n");
-  e9:	c7 44 24 04 07 04 00 	movl   $0x407,0x4(%esp)
+  e9:	c7 44 24 04 17 04 00 	movl   $0x417,0x4(%esp)
   f0:	00 
   f1:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
   f8:	e8 13 ff ff ff       	call   10 <printf>
@@ -183,7 +183,7 @@ printf(int fd, const char *s, ...)
 
   if(wait() != -1){
     printf(1, "wait got too many\n");
- 102:	c7 44 24 04 1b 04 00 	movl   $0x41b,0x4(%esp)
+ 102:	c7 44 24 04 2b 04 00 	movl   $0x42b,0x4(%esp)
  109:	00 
  10a:	c7 04 24 01 00 00 00 	movl   $0x1,(%esp)
  111:	e8 fa fe ff ff       	call   10 <printf>
@@ -833,3 +833,15 @@ SYSCALL(getCount)
  3f2:	b8 18 00 00 00       	mov    $0x18,%eax
  3f7:	cd 40                	int    $0x40
  3f9:	c3                   	ret    
+
+000003fa <getPolicy>:
+SYSCALL(getPolicy)
+ 3fa:	b8 19 00 00 00       	mov    $0x19,%eax
+ 3ff:	cd 40                	int    $0x40
+ 401:	c3                   	ret    
+
+00000402 <setPolicy>:
+SYSCALL(setPolicy)
+ 402:	b8 1a 00 00 00       	mov    $0x1a,%eax
+ 407:	cd 40                	int    $0x40
+ 409:	c3                   	ret    
