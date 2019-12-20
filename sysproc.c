@@ -111,7 +111,8 @@ int
 sys_getPolicy(void){
   return getPolicy();
 }
-void sys_setPolicy(int policyNum){
+int sys_setPolicy(int policyNum){
   argint(0,&policyNum);
   setPolicy(policyNum);
+  return 1;
 }

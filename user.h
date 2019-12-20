@@ -26,8 +26,10 @@ int uptime(void);
 int getppid(void);
 int getChildren(int);
 int getCount(int);
-int	getPolicy(void);
-void setPolicy(int);
+int setPolicy(int);
+int getPolicy(void);
+
+
 
 // ulib.c
 int stat(const char*, struct stat*);

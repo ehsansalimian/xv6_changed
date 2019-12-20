@@ -106,8 +106,9 @@ extern int sys_uptime(void);
 extern int sys_getppid(void);
 extern int sys_getChildren(void);
 extern int sys_getCount(void);
-extern int sys_getPolicy(void);
 extern int sys_setPolicy(void);
+extern int sys_getPolicy(void);
+
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -134,8 +135,10 @@ static int (*syscalls[])(void) = {
 [SYS_getppid] sys_getppid,
 [SYS_getChildren] sys_getChildren,
 [SYS_getCount] sys_getCount,
-[SYS_getPolicy] sys_getPolicy,
 [SYS_setPolicy] sys_setPolicy,
+[SYS_getPolicy] sys_getPolicy,
+
+
 };
 
 void

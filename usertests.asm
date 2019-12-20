@@ -8722,14 +8722,14 @@ SYSCALL(getCount)
     3d57:	cd 40                	int    $0x40
     3d59:	c3                   	ret    
 
-00003d5a <getPolicy>:
-SYSCALL(getPolicy)
+00003d5a <setPolicy>:
+SYSCALL(setPolicy)
     3d5a:	b8 19 00 00 00       	mov    $0x19,%eax
     3d5f:	cd 40                	int    $0x40
     3d61:	c3                   	ret    
 
-00003d62 <setPolicy>:
-SYSCALL(setPolicy)
+00003d62 <getPolicy>:
+SYSCALL(getPolicy)
     3d62:	b8 1a 00 00 00       	mov    $0x1a,%eax
     3d67:	cd 40                	int    $0x40
     3d69:	c3                   	ret    

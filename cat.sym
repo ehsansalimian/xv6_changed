@@ -27,7 +27,7 @@
 00000230 gets
 000003c2 getpid
 00000090 cat
-00000402 setPolicy
+000003fa setPolicy
 00000730 malloc
 000003d2 sleep
 00000352 pipe
@@ -49,7 +49,7 @@
 00000150 strcmp
 000003ba dup
 000003f2 getCount
-000003fa getPolicy
+00000402 getPolicy
 00000b20 buf
 00000290 stat
 00000b00 _edata

@@ -645,14 +645,14 @@ SYSCALL(getCount)
  2d7:	cd 40                	int    $0x40
  2d9:	c3                   	ret    
 
-000002da <getPolicy>:
-SYSCALL(getPolicy)
+000002da <setPolicy>:
+SYSCALL(setPolicy)
  2da:	b8 19 00 00 00       	mov    $0x19,%eax
  2df:	cd 40                	int    $0x40
  2e1:	c3                   	ret    
 
-000002e2 <setPolicy>:
-SYSCALL(setPolicy)
+000002e2 <getPolicy>:
+SYSCALL(getPolicy)
  2e2:	b8 1a 00 00 00       	mov    $0x1a,%eax
  2e7:	cd 40                	int    $0x40
  2e9:	c3                   	ret    

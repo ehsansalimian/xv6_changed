@@ -34,7 +34,7 @@
 00003d22 getpid
 00000a90 pipe1
 00002ec0 iref
-00003d62 setPolicy
+00003d5a setPolicy
 00004090 malloc
 00003d32 sleep
 00000210 exitiputtest
@@ -81,7 +81,7 @@
 00000410 opentest
 00001f00 subdir
 00003d52 getCount
-00003d5a getPolicy
+00003d62 getPolicy
 00003960 uio
 00001720 linktest
 000089e0 buf

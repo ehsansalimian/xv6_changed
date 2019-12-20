@@ -26,7 +26,7 @@
 0000026a mknod
 00000110 gets
 000002a2 getpid
-000002e2 setPolicy
+000002da setPolicy
 00000610 malloc
 000002b2 sleep
 00000232 pipe
@@ -48,7 +48,7 @@
 00000030 strcmp
 0000029a dup
 000002d2 getCount
-000002da getPolicy
+000002e2 getPolicy
 00000170 stat
 00000958 _edata
 00000964 _end

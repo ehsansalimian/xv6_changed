@@ -31,7 +31,7 @@
 00000e62 getpid
 00000890 parsepipe
 00000b40 parsecmd
-00000ea2 setPolicy
+00000e9a setPolicy
 000004a0 backcmd
 00000630 peek
 00000690 parseredirs
@@ -69,7 +69,7 @@
 00000400 pipecmd
 000003a0 redircmd
 00000e92 getCount
-00000e9a getPolicy
+00000ea2 getPolicy
 00000d30 stat
 00001946 _edata
 000019d0 _end

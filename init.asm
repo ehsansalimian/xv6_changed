@@ -770,14 +770,14 @@ SYSCALL(getCount)
  3e7:	cd 40                	int    $0x40
  3e9:	c3                   	ret    
 
-000003ea <getPolicy>:
-SYSCALL(getPolicy)
+000003ea <setPolicy>:
+SYSCALL(setPolicy)
  3ea:	b8 19 00 00 00       	mov    $0x19,%eax
  3ef:	cd 40                	int    $0x40
  3f1:	c3                   	ret    
 
-000003f2 <setPolicy>:
-SYSCALL(setPolicy)
+000003f2 <getPolicy>:
+SYSCALL(getPolicy)
  3f2:	b8 1a 00 00 00       	mov    $0x1a,%eax
  3f7:	cd 40                	int    $0x40
  3f9:	c3                   	ret    

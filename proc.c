@@ -594,6 +594,10 @@ procdump(void)
   }
 }
 
+int getppid(void){
+	return myproc()->parent->pid;
+}
+
 int 
 getChildren(int procId){
   struct proc *p;
@@ -611,6 +615,7 @@ acquire(&ptable.lock);
   return childrens;
 }
 
+
 int 
 getCount(int sysNum){
  
@@ -618,14 +623,15 @@ getCount(int sysNum){
 
 }
  
- void 
+ int 
  setPolicy(int policyNum){
-policy=policyNum;
+	policy=policyNum;
+  return 1;
  }
 
 int
 getPolicy(){
-return policy;
+	return policy;
 }
 
 

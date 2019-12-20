@@ -32,5 +32,6 @@ SYSCALL(uptime)
 SYSCALL(getppid)
 SYSCALL(getChildren)
 SYSCALL(getCount)
-SYSCALL(getPolicy)
 SYSCALL(setPolicy)
+SYSCALL(getPolicy)
+
